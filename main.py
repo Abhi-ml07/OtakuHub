@@ -1,5 +1,6 @@
 import os
 from flask import Flask, render_template, request, redirect
+from flask import session, url_for
 from flask_pymongo import PyMongo
 from dotenv import load_dotenv
 import bcrypt
@@ -45,7 +46,7 @@ def contact():
             "message": message
         })
 
-        return "Message sent successfully!"
+        return render_template("contact.html",success="Your message has been sent!")
     return render_template("contact.html")
 
 
@@ -69,7 +70,8 @@ def register():
             "password": hashed_password
         })
 
-        return "Account created successfully!"
+        # Show a popup message on the login page after successful registration
+        return render_template("login.html", success="Account created successfully!")
     return render_template("create_account.html")
 
 
@@ -82,9 +84,11 @@ def login():
         user = mongo.db.users.find_one({"email": email})
 
         if user and bcrypt.checkpw(password.encode("utf-8"), user["password"]):
-            return "Login successful!"
+            # store user name in session and render login with success
+            session['user'] = user.get('name') or user.get('email')
+            return render_template("login.html", success="Login successful!")
         else:
-            return "Invalid email or password."
+            return render_template("login.html", error="Invalid email or password.")
 
     return render_template("login.html")
 
@@ -93,6 +97,11 @@ def login():
 @app.route("/add_tocart")
 def add_to_cart():
     return render_template("add_tocart.html")
+
+@app.route('/logout')
+def logout():
+    session.pop('user', None)
+    return redirect(url_for('home'))
 
 
 @app.route("/anime")
