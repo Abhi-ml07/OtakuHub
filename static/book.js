@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const label = this.textContent.trim();
                 sortBtn.childNodes[0].nodeValue = label + ' ';
                 closeSort();
-                console.log('Sort selected:', sortKey);
+                performSort(sortKey);
             });
         });
 
@@ -64,6 +64,57 @@ document.addEventListener('DOMContentLoaded', function () {
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') closeSort();
         });
+    }
+
+    // Sorting implementation: reorders .book-card elements inside .books-grid
+    function performSort(key) {
+        const grid = document.querySelector('.books-grid');
+        if (!grid) return;
+        const cards = Array.from(grid.querySelectorAll('.book-card'));
+
+        const getTitle = card => (card.querySelector('h3')?.textContent || '').trim().toLowerCase();
+        const getPrice = card => {
+            const p = card.querySelector('p')?.textContent || '';
+            const num = p.replace(/[^0-9.]/g, '');
+            return parseFloat(num) || 0;
+        };
+        // Placeholder date/popularity: read data-date or fallback to 0
+        const getDate = card => {
+            const d = card.getAttribute('data-date');
+            if (d) return new Date(d).getTime() || 0;
+            return 0;
+        };
+
+        let sorted = cards.slice();
+        switch (key) {
+            case 'az':
+                sorted.sort((a, b) => getTitle(a).localeCompare(getTitle(b)));
+                break;
+            case 'za':
+                sorted.sort((a, b) => getTitle(b).localeCompare(getTitle(a)));
+                break;
+            case 'price-asc':
+                sorted.sort((a, b) => getPrice(a) - getPrice(b));
+                break;
+            case 'price-desc':
+                sorted.sort((a, b) => getPrice(b) - getPrice(a));
+                break;
+            case 'date-old':
+                sorted.sort((a, b) => getDate(a) - getDate(b));
+                break;
+            case 'date-new':
+                sorted.sort((a, b) => getDate(b) - getDate(a));
+                break;
+            case 'best':
+            case 'featured':
+            default:
+                // leave as-is (original document order)
+                sorted = cards;
+                break;
+        }
+
+        // Re-append elements in new order
+        sorted.forEach(card => grid.appendChild(card));
     }
 
     // CATEGORY dropdown (BOOKS)
