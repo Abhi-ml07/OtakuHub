@@ -16,6 +16,14 @@
             </script>
             {% endif %}
 
+            {% if error %}
+            <script>
+                window.addEventListener('DOMContentLoaded', function () {
+                    alert({{ error|tojson }});
+                });
+            </script>
+            {% endif %}
+
             {% if form and form.non_field_errors %}
             <div class="form-errors">
                 {{ form.non_field_errors }}
@@ -23,8 +31,8 @@
             {% endif %}
 
             <div class="form-group">
-                <label for="id_username">Username / Email</label>
-                <input id="id_username" type="text" name="username" placeholder="Enter your username" required autocomplete="username" autofocus>
+                <label for="id_email">Email</label>
+                <input id="id_email" type="text" name="email" placeholder="Enter your email" required autocomplete="username" autofocus>
             </div>
 
             <div class="form-group">
@@ -36,7 +44,7 @@
         </form>
 
         <div class="links">
-            <p>New to Otaku Hub? <a href="/register">Create Account</a></p>
+            <p>New to Otaku Hub? <a href="{{ url_for('register') }}">Create Account</a></p>
             <p><a href="">Forgot Password?</a></p>
         </div>
 

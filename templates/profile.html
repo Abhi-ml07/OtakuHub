@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Profile - OtakuHub{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Your Profile</h1>
+    <p>Welcome, {{ user|e }}.</p>
+    <p>This is a simple profile page. You can extend it to show orders, favorites, and account settings.</p>
+</div>
+{% endblock body %}

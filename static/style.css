@@ -400,6 +400,31 @@ h1, h2 {
     opacity: 0.6;
 }
 
+/* Navbar user / logout styles */
+.user-name a {
+    color: #ecf0f1;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+.user-name a:hover {
+    background: rgba(255,255,255,0.05);
+}
+.logout-btn {
+    background: linear-gradient(90deg,#6A82FB,#FC5C7D);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(106,130,251,0.12);
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+.logout-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(106,130,251,0.16); }
+
 /* Layout */
 .content {
     display: flex;

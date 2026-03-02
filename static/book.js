@@ -87,6 +87,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let sorted = cards.slice();
         switch (key) {
+            case 'featured':
+                // featured: featured items first, keep relative order otherwise
+                sorted.sort((a, b) => {
+                    const fa = a.getAttribute('data-featured') === '1' ? 0 : 1;
+                    const fb = b.getAttribute('data-featured') === '1' ? 0 : 1;
+                    return fa - fb;
+                });
+                break;
+            case 'best':
+                // best-selling placeholder: same as featured for now
+                sorted.sort((a, b) => {
+                    const fa = a.getAttribute('data-best') === '1' ? 0 : 1;
+                    const fb = b.getAttribute('data-best') === '1' ? 0 : 1;
+                    return fa - fb;
+                });
+                break;
             case 'az':
                 sorted.sort((a, b) => getTitle(a).localeCompare(getTitle(b)));
                 break;

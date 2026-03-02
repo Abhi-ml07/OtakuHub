@@ -9,6 +9,7 @@ load_dotenv()
 
 app = Flask(__name__)
 app.config["MONGO_URI"] = os.getenv("MONGO_URI")
+app.secret_key = os.getenv("SECRET_KEY", "dev-secret")
 mongo = PyMongo(app)
 
 # -------------------- ROUTES --------------------
@@ -70,7 +71,6 @@ def register():
             "password": hashed_password
         })
 
-        # Show a popup message on the login page after successful registration
         return render_template("login.html", success="Account created successfully!")
     return render_template("create_account.html")
 
@@ -84,24 +84,32 @@ def login():
         user = mongo.db.users.find_one({"email": email})
 
         if user and bcrypt.checkpw(password.encode("utf-8"), user["password"]):
-            # store user name in session and render login with success
             session['user'] = user.get('name') or user.get('email')
-            return render_template("login.html", success="Login successful!")
+            session['just_logged_in'] = True
+            return redirect(url_for('login'))
         else:
             return render_template("login.html", error="Invalid email or password.")
-
-    return render_template("login.html")
-
+    success = None
+    if session.pop('just_logged_in', None):
+        success = "Login successful!"
+    return render_template("login.html", success=success)
 
 
 @app.route("/add_tocart")
 def add_to_cart():
     return render_template("add_tocart.html")
 
-@app.route('/logout')
+@app.route('/logout', methods=['POST'])
 def logout():
     session.pop('user', None)
     return redirect(url_for('home'))
+
+
+@app.route('/profile')
+def profile():
+    if not session.get('user'):
+        return redirect(url_for('login'))
+    return render_template('profile.html', user=session.get('user'))
 
 
 @app.route("/anime")
