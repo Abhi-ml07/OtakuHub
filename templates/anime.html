@@ -1,0 +1,432 @@
+{% extends "base.html" %}
+{% block title %}Anime Books - OtakuHub{% endblock %}
+
+{% block body %}
+<div class="container">
+    <header class="header">
+        <h1>ANIME</h1>
+        <p>Immerse yourself in the vibrant world of anime-inspired literature. Explore stories that capture the essence of your favorite anime series and characters.</p>
+    </header>
+
+    <div class="page">
+        <div class="top-bar">
+            <div class="top-left">
+                <div class="category-dropdown">
+                    <button class="filter-btn category-btn" aria-haspopup="true" aria-expanded="false">
+                        BOOKS <span class="icon">≡</span>
+                    </button>
+                    <div class="dropdown-menu category-menu" role="menu" aria-hidden="true">
+                        <ul>
+                            <li data-cat="all"><a href="/book">BOOKS</a></li>
+                            <li data-cat="all"><a href="/anime">ANIME</a></li>
+                            <li data-cat="fiction"><a href="/story">STORY</a></li>
+                            <li data-cat="spirituality"><a href="/spiritual">SPIRITUALITY</a></li>
+                            <li data-cat="selfhelp"><a href="/self_book">SELF-HELP</a></li>
+                            <li data-cat="other"><a href="/other">OTHER</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sort-dropdown">
+                    <button class="filter-btn sort-btn" aria-haspopup="true" aria-expanded="false">
+                        FEATURED <span class="icon">≡</span>
+                    </button>
+                    <div class="dropdown-menu" role="menu" aria-hidden="true">
+                        <ul>
+                            <li data-sort="featured">FEATURED</li>
+                            <li data-sort="best">BEST SELLING</li>
+                            <li data-sort="az">ALPHABETICALLY, A-Z</li>
+                            <li data-sort="za">ALPHABETICALLY, Z-A</li>
+                            <li data-sort="date-old">DATE, OLD TO NEW</li>
+                            <li data-sort="date-new">DATE, NEW TO OLD</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="top-right">
+                <span class="view-icon" data-cols="2">▤</span>
+                <span class="view-icon" data-cols="3">▦</span>
+            </div>
+        </div>
+
+        <main class="main"></main>
+    </div>
+</div>
+
+<div class="container">
+    <div class="menu">
+
+        <div class="card anime-card">
+            <img src="static/Imag/Naruto.jpg" alt="Naruto">
+            <div class="card-content">
+                <h3>Naruto</h3>
+                <p>Action • Friendship • Ninja</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Demon Slayer.jpg" alt="Demon Slayer">
+            <div class="card-content">
+                <h3>Demon Slayer</h3>
+                <p>Dark • Action • Fantasy</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Attack on Titan.jpg" alt="Attack on Titan">
+            <div class="card-content">
+                <h3>Attack on Titan</h3>
+                <p>Survival • Titans • Mystery</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/JJK.jpg" alt="Jujutsu Kaisen">
+            <div class="card-content">
+                <h3>Jujutsu Kaisen</h3>
+                <p>Curses • Action • Supernatural</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/One Piece.jpg" alt="One Piece">
+            <div class="card-content">
+                <h3>One Piece</h3>
+                <p>Adventure • Pirates • Dreams</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Bleach.jpg" alt="Bleach">
+            <div class="card-content">
+                <h3>Bleach</h3>
+                <p>Spirits • Swords • Action</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Death Note.jpg" alt="Death Note">
+            <div class="card-content">
+                <h3>Death Note</h3>
+                <p>Thriller • Mind Game • Mystery</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Dragon Ball.jpg" alt="Dragon Ball">
+            <div class="card-content">
+                <h3>Dragon Ball</h3>
+                <p>Power • Adventure • Battle</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Fullmetal Alchemist.jpg" alt="Fullmetal Alchemist">
+            <div class="card-content">
+                <h3>Fullmetal Alchemist</h3>
+                <p>Alchemy • Brotherhood • Drama</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Tokyo Ghoul.jpg" alt="Tokyo Ghoul">
+            <div class="card-content">
+                <h3>Tokyo Ghoul</h3>
+                <p>Dark • Horror • Identity</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/DanDaDan.jpg" alt="DanDaDan">
+            <div class="card-content">
+                <h3>DanDaDan</h3>
+                <p>Funny • Supernatural • Chaos</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Takopi.jpg" alt="Takopi's Original Sin">
+            <div class="card-content">
+                <h3>Takopi's Original Sin</h3>
+                <p>Sad • Emotional • Psychological</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Chainsaw Man.jpg" alt="Chainsaw Man">
+            <div class="card-content">
+                <h3>Chainsaw Man</h3>
+                <p>Violence • Devils • Action</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Spy x Family.jpg" alt="Spy x Family">
+            <div class="card-content">
+                <h3>Spy x Family</h3>
+                <p>Comedy • Family • Spy</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/My Hero Academia.jpg" alt="My Hero Academia">
+            <div class="card-content">
+                <h3>My Hero Academia</h3>
+                <p>Heroes • School • Action</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Black Clover.jpg" alt="Black Clover">
+            <div class="card-content">
+                <h3>Black Clover</h3>
+                <p>Magic • Rivalry • Adventure</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Hunter x Hunter.jpg" alt="Hunter x Hunter">
+            <div class="card-content">
+                <h3>Hunter x Hunter</h3>
+                <p>Adventure • Hunters • Strategy</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Fairy Tail.jpg" alt="Fairy Tail">
+            <div class="card-content">
+                <h3>Fairy Tail</h3>
+                <p>Guild • Magic • Friendship</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Blue Lock.jpg" alt="Blue Lock">
+            <div class="card-content">
+                <h3>Blue Lock</h3>
+                <p>Football • Ego • Competition</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Haikyuu.jpg" alt="Haikyuu!!">
+            <div class="card-content">
+                <h3>Haikyuu!!</h3>
+                <p>Volleyball • Teamwork • Passion</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Kuroko no Basket.jpg" alt="Kuroko no Basket">
+            <div class="card-content">
+                <h3>Kuroko no Basket</h3>
+                <p>Basketball • Rivalry • Skills</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Solo Leveling.jpg" alt="Solo Leveling">
+            <div class="card-content">
+                <h3>Solo Leveling</h3>
+                <p>Fantasy • Dungeons • Power</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Vinland Saga.jpg" alt="Vinland Saga">
+            <div class="card-content">
+                <h3>Vinland Saga</h3>
+                <p>History • Revenge • War</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Dr Stone.jpg" alt="Dr. Stone">
+            <div class="card-content">
+                <h3>Dr. Stone</h3>
+                <p>Science • Survival • Rebuild</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Fire Force.jpg" alt="Fire Force">
+            <div class="card-content">
+                <h3>Fire Force</h3>
+                <p>Flames • Action • Mystery</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Code Geass.jpg" alt="Code Geass">
+            <div class="card-content">
+                <h3>Code Geass</h3>
+                <p>Strategy • Mecha • Rebellion</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Steins Gate.jpg" alt="Steins;Gate">
+            <div class="card-content">
+                <h3>Steins;Gate</h3>
+                <p>Time Travel • Sci-Fi • Thriller</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Classroom of the Elite.jpg" alt="Classroom of the Elite">
+            <div class="card-content">
+                <h3>Classroom of the Elite</h3>
+                <p>School • Psychology • Tactics</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Your Name.jpg" alt="Your Name">
+            <div class="card-content">
+                <h3>Your Name</h3>
+                <p>Romance • Fantasy • Emotion</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/A Silent Voice.jpg" alt="A Silent Voice">
+            <div class="card-content">
+                <h3>A Silent Voice</h3>
+                <p>Drama • Friendship • Healing</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Weathering With You.jpg" alt="Weathering With You">
+            <div class="card-content">
+                <h3>Weathering With You</h3>
+                <p>Romance • Weather • Fantasy</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Tokyo Revengers.jpg" alt="Tokyo Revengers">
+            <div class="card-content">
+                <h3>Tokyo Revengers</h3>
+                <p>Gangs • Time Travel • Action</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Parasyte.jpg" alt="Parasyte">
+            <div class="card-content">
+                <h3>Parasyte</h3>
+                <p>Horror • Alien • Survival</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Monster.jpg" alt="Monster">
+            <div class="card-content">
+                <h3>Monster</h3>
+                <p>Psychological • Crime • Mystery</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Erased.jpg" alt="Erased">
+            <div class="card-content">
+                <h3>Erased</h3>
+                <p>Thriller • Time Travel • Drama</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/The Promised Neverland.jpg" alt="The Promised Neverland">
+            <div class="card-content">
+                <h3>The Promised Neverland</h3>
+                <p>Escape • Suspense • Mystery</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/No Game No Life.jpg" alt="No Game No Life">
+            <div class="card-content">
+                <h3>No Game No Life</h3>
+                <p>Games • Fantasy • Strategy</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Overlord.jpg" alt="Overlord">
+            <div class="card-content">
+                <h3>Overlord</h3>
+                <p>Fantasy • Game World • Power</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Re Zero.jpg" alt="Re:Zero">
+            <div class="card-content">
+                <h3>Re:Zero</h3>
+                <p>Fantasy • Reset • Emotional</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Sword Art Online.jpg" alt="Sword Art Online">
+            <div class="card-content">
+                <h3>Sword Art Online</h3>
+                <p>Virtual World • Action • Romance</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+        <div class="card anime-card">
+            <img src="static/Imag/Neon Genesis Evangelion.jpg" alt="Neon Genesis Evangelion">
+            <div class="card-content">
+                <h3>Neon Genesis Evangelion</h3>
+                <p>Mecha • Psychological • Drama</p>
+                <a href="read.html">Read Now</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="/static/book.js"></script>
+{% endblock body %}
